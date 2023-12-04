@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'main',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,12 +80,16 @@ WSGI_APPLICATION = 'lab.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'info',  # Назва вашої бази даних у MySQL Workbench
+        'USER': 'root',  # Ім'я користувача для підключення до бази даних
+        'PASSWORD': 'messi2016',  # Пароль для підключення
+        'HOST': 'localhost',  # Адреса сервера бази даних (зазвичай 'localhost')
+        'PORT': '3306',  # Порт, на якому працює MySQL (зазвичай '3306' для MySQL)
     }
 }
 
-
+AUTH_USER_MODEL = 'main.CustomUser'
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

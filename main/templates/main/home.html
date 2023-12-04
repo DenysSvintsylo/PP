@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+<div class="content-container">
+    <div class="header">
+        <h2>Welcome to Home</h2>
+        <a href="{% url 'profile' %}" class="profile-button">Профіль</a>
+    </div>
+    <div class="malls-list">
+        {% for mall in malls %}
+            <div class="mall">
+                <h3>{{ mall.name }}</h3>
+                <p>{{ mall.address }}</p>
+                <p>{{ mall.description }}</p>
+            </div>
+        {% empty %}
+            <p>No malls found in your city.</p>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
