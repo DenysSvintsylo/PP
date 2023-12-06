@@ -1,0 +1,78 @@
+/* Застосування загального фону та шрифтів */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Створення контейнера з відступами та тінню як на сторінці реєстрації */
+.content-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилізація заголовку та кнопки профілю */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Стилізація списку торгових центрів */
+.malls-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стилізація блоку торгового центру */
+.mall {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.mall h3 {
+    color: #5cb85c;
+    margin-top: 0;
+}
+
+.mall p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Стилізація кнопки профілю */
+.profile-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+    background-color: #0056b3;
+}
+
+/* Додаткові стилі для пустого списку торгових центрів */
+.no-malls {
+    text-align: center;
+    color: #999;
+}

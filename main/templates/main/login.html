@@ -1,4 +1,3 @@
-<!-- templates/main/login.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +10,24 @@
 <body>
     <div class="form-container">
         <h2>Login</h2>
-        <form method="post">
+        <form method="post" class="login-form">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Login</button>
+            <div class="form-field">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div class="form-field">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            <button type="submit" class="btn">Login</button>
         </form>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
     </div>
 </body>
 </html>
